@@ -65,10 +65,10 @@ func (re *recaptcha) Verify(
 	lines := strings.Split(string(body), "\n")
 
 	if lines[0] == "true" {
-		resp.status = true
+		resp.Status = true
 	} else {
-		resp.status = false
-		resp.err = parseErrorLine(lines[1])
+		resp.Status = false
+		resp.Err = parseErrorLine(lines[1])
 	}
 
 	return resp, nil

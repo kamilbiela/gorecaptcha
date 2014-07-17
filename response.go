@@ -6,8 +6,8 @@ import (
 
 //
 type recaptchaResponse struct {
-	status bool
-	err    error
+	Status bool
+	Err    error
 }
 
 var (

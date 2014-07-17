@@ -46,8 +46,8 @@ var _ = Describe("Gorecaptcha", func() {
 			r := NewRecaptcha("key")
 			r.verifyURL = ts.URL
 			resp, _ := r.Verify("", "", "")
-			Expect(resp.err).To(Equal(ErrInvalidSitePrivateKey))
-			Expect(resp.status).To(Equal(false))
+			Expect(resp.Err).To(Equal(ErrInvalidSitePrivateKey))
+			Expect(resp.Status).To(Equal(false))
 		})
 
 		It("Verify: return true and no error on success response", func() {
@@ -60,8 +60,8 @@ var _ = Describe("Gorecaptcha", func() {
 			r := NewRecaptcha("key")
 			r.verifyURL = ts.URL
 			resp, _ := r.Verify("", "", "")
-			Expect(resp.err).To(BeNil())
-			Expect(resp.status).To(Equal(true))
+			Expect(resp.Err).To(BeNil())
+			Expect(resp.Status).To(Equal(true))
 		})
 	})
 })
